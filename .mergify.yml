@@ -62,6 +62,9 @@ merge_protections:
 
 conflict_resolvers:
   - paths:
+      - vm3-json-reorder-policy.json
+    strategy: json
+  - paths:
       - tsjsx/policy.tsx
     strategy: typescript
   - paths:
@@ -78,6 +81,15 @@ merge_queue:
   mode: serial
 
 queue_rules:
+  - name: vm3-resolverfresh-261011
+    queue_conditions:
+      - base = vm3-jsonreorder-base-261007
+      - title = VM3 JSON REORDER FORCED 261007
+    merge_conditions:
+      - check-success = vm3-resolverfresh-never-261011
+    merge_method: merge-batch
+    batch_size: 2
+    batch_max_wait_time: 5 min
   - name: vm3-oscpucross-261011
     queue_conditions:
       - base = vm3-oscpucross-base-261011
