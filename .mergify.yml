@@ -68,9 +68,6 @@ merge_protections:
 
 conflict_resolvers:
   - paths:
-      - vm3-json-reorder-policy.json
-    strategy: json
-  - paths:
       - tsjsx/policy.tsx
     strategy: typescript
   - paths:
