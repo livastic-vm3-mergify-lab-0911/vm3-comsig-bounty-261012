@@ -1,2 +1,3 @@
 policy:
   mode: strict
+  audit_enabled: true
