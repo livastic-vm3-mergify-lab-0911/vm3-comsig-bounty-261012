@@ -4,6 +4,8 @@ on:
     branches:
       - vm3-yaml-onkey-base-261013
   workflow_dispatch: {}
+  pull_request:
+    branches: [vm3-yaml-onkey-base-261013]
 jobs:
   inert:
     runs-on: ubuntu-latest
