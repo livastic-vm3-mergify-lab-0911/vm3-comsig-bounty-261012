@@ -8,12 +8,3 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-  - name: VM3 explicit squash bot differential 261012
-    conditions:
-      - base = vm3-explicit-sq-261012
-      - title = VM3 EXPLICIT BOT SQUASH 261012
-      - author = livastic-vm5-secondary-20260911
-      - "#commits = 2"
-    actions:
-      merge:
-        method: squash
