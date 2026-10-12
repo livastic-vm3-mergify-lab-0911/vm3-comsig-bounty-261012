@@ -8,3 +8,12 @@ pull_request_rules:
     actions:
       merge:
         method: merge
+
+  - name: VM3 visible external squash-only auto selector 261012
+    conditions:
+      - base = vm3-sqvis-261012
+      - title = VM3 VISIBLE SQUASH METHOD 261012
+      - author = livastic-vm5-secondary-20260911
+      - "#commits = 2"
+    actions:
+      merge: {}
