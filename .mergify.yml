@@ -1,45 +1,10 @@
 pull_request_rules:
-- name: VM3 only verified commits security condition 261012
-  conditions:
-  - base = vm3-sig-impact-261012
-  - title = VM3 ALL COMMITS VERIFIED 261012
-  - '#commits-unverified = 0'
-  - '#commits = 251'
-  actions:
-    merge:
-      method: merge
-- name: VM3 261012 isolated YAML structural NEG
-  conditions:
-  - base = vm3-struct-yaml-neg-261012
-  - title ~= ^VM3-YAML-NEG-261012
-  actions:
-    queue: {}
-- name: VM3 261012 isolated YAML structural POS
-  conditions:
-  - base = vm3-struct-yaml-pos-261012
-  - title ~= ^VM3-YAML-POS-261012
-  actions:
-    queue: {}
-merge_queue:
-  mode: serial
-queue_rules:
-- name: vm3-yaml-neg-261012
-  queue_conditions:
-  - base = vm3-struct-yaml-neg-261012
-  - title ~= ^VM3-YAML-NEG-261012
-  merge_method: merge-batch
-  batch_size: 2
-  batch_max_wait_time: 10 min
-  batch_max_failure_resolution_attempts: 0
-- name: vm3-yaml-pos-261012
-  queue_conditions:
-  - base = vm3-struct-yaml-pos-261012
-  - title ~= ^VM3-YAML-POS-261012
-  merge_method: merge-batch
-  batch_size: 2
-  batch_max_wait_time: 10 min
-  batch_max_failure_resolution_attempts: 0
-conflict_resolvers:
-- paths:
-  - structural/security-policy.yaml
-  strategy: yaml
+  - name: VM3 only verified commits security condition 261012
+    conditions:
+      - base = vm3-sig-impact-261012
+      - title = VM3 ALL COMMITS VERIFIED 261012
+      - "#commits-unverified = 0"
+      - "#commits = 251"
+    actions:
+      merge:
+        method: merge
