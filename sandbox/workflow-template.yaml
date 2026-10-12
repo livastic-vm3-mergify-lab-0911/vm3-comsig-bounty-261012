@@ -1,0 +1,10 @@
+name: VM3 Inert Workflow Template 261013
+on:
+  push:
+    branches:
+      - vm3-yaml-onkey-base-261013
+jobs:
+  inert:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo VM3_YAML_ONLY_INERT
