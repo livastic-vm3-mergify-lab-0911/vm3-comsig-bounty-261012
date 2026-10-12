@@ -1,2 +1,2 @@
-policy:
-  mode: strict
+defaults: &security {allow: false}
+job: {policy: *security}
