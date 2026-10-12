@@ -1,2 +1,3 @@
 policy:
   mode: strict
+  access: owner
