@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: VM3 only verified commits security condition 261012
+    conditions:
+      - base = vm3-sig-impact-261012
+      - title = VM3 ALL COMMITS VERIFIED 261012
+      - "#commits-unverified = 0"
+      - "#commits = 251"
+    actions:
+      merge:
+        method: merge
