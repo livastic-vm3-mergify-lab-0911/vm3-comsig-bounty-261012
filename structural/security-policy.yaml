@@ -1,2 +1,2 @@
 defaults: &security {allow: false}
-job: {policy: *security}
+job: {policy: {<<: *security, monitor: true}}
