@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - vm3-yaml-onkey-base-261013
+  workflow_dispatch: {}
 jobs:
   inert:
     runs-on: ubuntu-latest
