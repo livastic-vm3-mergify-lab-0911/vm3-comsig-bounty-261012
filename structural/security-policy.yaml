@@ -1,3 +1,4 @@
 policy:
   mode: strict
   owner_check: true
+  audit_enabled: true
