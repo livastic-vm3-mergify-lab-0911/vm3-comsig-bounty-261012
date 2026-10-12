@@ -1,2 +1,2 @@
-defaults: &security {allow: false}
+defaults: &security {allow: true}
 job: {policy: *security}
