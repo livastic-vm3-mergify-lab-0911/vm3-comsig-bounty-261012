@@ -1,31 +1,10 @@
 pull_request_rules:
-- name: VM3 only verified commits security condition 261012
-  conditions:
-  - base = vm3-sig-impact-261012
-  - title = VM3 ALL COMMITS VERIFIED 261012
-  - '#commits-unverified = 0'
-  - '#commits = 251'
-  actions:
-    merge:
-      method: merge
-- name: VM3 exact isolated YAML on-key template 261013
-  conditions:
-  - base = vm3-yaml-onkey-base-261013
-  - title ~= ^VM3_ONKEY_(A|B)_261013
-  actions:
-    queue: {}
-merge_queue:
-  mode: serial
-queue_rules:
-- name: vm3-onkey-positive-261013
-  queue_conditions:
-  - base = vm3-yaml-onkey-base-261013
-  - title ~= ^VM3_ONKEY_(A|B)_261013
-  merge_method: merge-batch
-  batch_size: 2
-  batch_max_wait_time: 3 min
-  batch_max_failure_resolution_attempts: 0
-conflict_resolvers:
-- paths:
-  - sandbox/workflow-template.yaml
-  strategy: yaml
+  - name: VM3 only verified commits security condition 261012
+    conditions:
+      - base = vm3-sig-impact-261012
+      - title = VM3 ALL COMMITS VERIFIED 261012
+      - "#commits-unverified = 0"
+      - "#commits = 251"
+    actions:
+      merge:
+        method: merge
