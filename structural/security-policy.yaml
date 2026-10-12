@@ -1,2 +1,3 @@
 policy:
   mode: strict
+  owner_check: true
